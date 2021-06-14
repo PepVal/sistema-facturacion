@@ -12,14 +12,14 @@ $ git checkout test
 
 ### Install XAMPP
 
-Install xampp to make the process easier, because you have php and mysql ready
+Install xampp to make the process easier, because you have php and mysql ready\
 **Note:** add PHP to the path to use it globally
 
 -   [Xampp downloader](https://www.apachefriends.org/es/download.html)
 
 ### Install Composer
 
-Like npm or yarn, but to php
+Like npm or yarn, but to php\
 **Note:** add Composer to the path to use it globally
 
 -   [Composer downloader](https://getcomposer.org/download/)
