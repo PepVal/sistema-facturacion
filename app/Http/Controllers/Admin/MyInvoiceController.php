@@ -20,10 +20,7 @@ class MyInvoiceController extends Controller
     {   
         $invoices = Invoice::perCompany()->purchases()->render()->get();
 
-        return response()->json([
-            'total' => $invoices->count(),
-            'rows' => $invoices
-        ]);
+        return response()->json(['total' => $invoices->count(), 'rows' => $invoices]);
     }
 
     /**
