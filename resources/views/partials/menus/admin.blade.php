@@ -29,12 +29,12 @@
         <span class="app-menu__label">Mis Facturas</span>
       </a>
     </li>
-    <li>
-      <a class="app-menu__item" href="">
-        <i class="app-menu__icon fa fa-truck"></i>
-        <span class="app-menu__label">Transferencias</span>
-      </a>
-    </li>
+      <!-- <li>
+        <a class="app-menu__item" href="">
+          <i class="app-menu__icon fa fa-truck"></i>
+          <span class="app-menu__label">Transferencias</span>
+        </a>
+      </li> -->
     <li>
       <a class="app-menu__item {{ active('admin.users.index') }}" href="{{ route('admin.users.index') }}">
         <i class="app-menu__icon fa fa-users"></i>

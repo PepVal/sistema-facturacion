@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-row mb-2">
                     <label class="col-3 text-right col-form-label">
-                        IGV:
+                        IVA:
                     </label>
                     <div class="col-9">
                       <input type="number" id="igv" class="form-control" value="0.00" readonly/>
