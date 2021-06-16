@@ -9,7 +9,7 @@
             <p>
                 <a class="btn btn-primary" href="{{ route('admin.products.create') }}">
                     <i class="fa fa-plus"></i> Crear Producto
-                </a>                
+                </a>
             </p>
         </div>
         <table id="products"></table>
@@ -27,6 +27,7 @@ $('#products').bootstrapTable({
             responseType: request.dataType
         })
         .then(function (response) {
+            console.log("RESPONSE", response);
             request.success(response.data);
         })
         .catch(function (error) {
@@ -36,7 +37,7 @@ $('#products').bootstrapTable({
     columns: [
         { field: 'code', title: '#', sortable: true },
         { field: 'description', title: 'Descripción', sortable: true },
-        { field: 'price', title: 'Precio', sortable: true }, 
+        { field: 'price', title: 'Precio', sortable: true },
     ],
     pagination: true,
     search: true,

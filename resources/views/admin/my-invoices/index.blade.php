@@ -28,6 +28,7 @@ $('#my-invoices').bootstrapTable({
             responseType: request.dataType
         })
         .then(function (response) {
+            console.log("RESPONSE", response);
             request.success(response.data);
         })
         .catch(function (error) {
@@ -46,5 +47,5 @@ $('#my-invoices').bootstrapTable({
     pagination: true,
     sidePagination: 'server'
 });
-</script>    
+</script>
 @endpush

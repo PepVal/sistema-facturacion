@@ -16,10 +16,10 @@ class MyInvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function data() 
-    {   
+    public function data()
+    {
         $invoices = Invoice::perCompany()->purchases()->render()->get();
-
+        var_dump($invoices);
         return response()->json([
             'total' => $invoices->count(),
             'rows' => $invoices
@@ -61,9 +61,9 @@ class MyInvoiceController extends Controller
 
         try {
             $invoice = Invoice::create([
-                'serie' => $data['serie'], 
+                'serie' => $data['serie'],
                 'correlative' => $data['correlative'],
-                'currency_code' => $data['currency_code'], 
+                'currency_code' => $data['currency_code'],
                 'creation_date' => $data['creation_date'],
                 'expiration_date' => $data['expiration_date'] ?? NULL,
                 'customer_id' => $data['customer_id'],

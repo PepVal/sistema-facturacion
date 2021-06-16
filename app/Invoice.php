@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     use Tenant;
-    
+
     const DEFAULT_OPERATION_TYPE = '101';
     const DEFAULT_DOCUMENT_TYPE = '01';
     const PERUVIAN_CURRENCY = 'PEN';
@@ -23,7 +23,7 @@ class Invoice extends Model
         'status',
         'subtotal',
         'igv_percent',
-        'tax', 
+        'tax',
         'discount',
         'total',
         'sunat_operation_type', // Catalog. 51
@@ -40,12 +40,12 @@ class Invoice extends Model
     ];
 
     protected $visible = [
-        'id', 
-        'serie', 
-        'correlative', 
-        'currency_code', 
-        'creation_date', 
-        'expiration_date', 
+        'id',
+        'serie',
+        'correlative',
+        'currency_code',
+        'creation_date',
+        'expiration_date',
         'status',
         'subtotal',
         'tax',
@@ -79,15 +79,16 @@ class Invoice extends Model
 
     public static function calculateSummary(array $items) {
 
+        var_dump($items);
         $igv_percent = self::IGV();
         $subtotal = collect($items)->sum('subtotal');
         $tax = $subtotal * ($igv_percent/100);
         $total = $subtotal + $tax;
-        
+
         return [
-            'igv_percent' => $igv_percent, 
-            'subtotal' => $subtotal, 
-            'tax' => $tax, 
+            'igv_percent' => $igv_percent,
+            'subtotal' => $subtotal,
+            'tax' => $tax,
             'total' => $total
         ];
     }
