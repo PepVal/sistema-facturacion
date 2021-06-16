@@ -40,12 +40,6 @@ Search **Dynamic Extensions** and remove the **semicolon** in extension=soap
 $ composer install
 ```
 
-### Configure your database and run command:
-
-```sh
-$ php artisan migrate --seed
-```
-
 ### Config your variable enviroments
 
 -   Copy all keys of `.env.example` into a new file `.env`
@@ -53,6 +47,12 @@ $ php artisan migrate --seed
 
 ```sh
 $ php artisan key:generate
+```
+
+### Configure your database and run command:
+
+```sh
+$ php artisan migrate --seed
 ```
 
 ### Run project
