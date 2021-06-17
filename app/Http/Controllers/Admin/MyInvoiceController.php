@@ -19,7 +19,7 @@ class MyInvoiceController extends Controller
     public function data()
     {
         $invoices = Invoice::perCompany()->purchases()->render()->get();
-        var_dump($invoices);
+        //var_dump($invoices);
         return response()->json([
             'total' => $invoices->count(),
             'rows' => $invoices

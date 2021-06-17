@@ -43,5 +43,4 @@ class ExampleTest extends TestCase
 
     }
 
-
 }

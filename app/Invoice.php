@@ -79,7 +79,7 @@ class Invoice extends Model
 
     public static function calculateSummary(array $items) {
 
-        var_dump($items);
+        //var_dump($items);
         $igv_percent = self::IGV();
         $subtotal = collect($items)->sum('subtotal');
         $tax = $subtotal * ($igv_percent/100);
