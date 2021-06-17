@@ -14,10 +14,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function data() 
-    {   
+    public function data()
+    {
         $products = Product::perCompany()->search(request('search'))->render()->get();
-
+//        var_dump($products);
         return response()->json(['total' => $products->count(), 'rows' => $products]);
     }
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
     public function store(CreateProductRequest $request)
     {
         $data = $request->validated();
-        
+
         if( isset($data['images']) ) {
             $images = $this->uploadImages($data['images'], $request->user()->company_id);
         }
@@ -59,21 +59,21 @@ class ProductController extends Controller
             'code' => $data['code'],
             'description' => $data['description'],
             'images' => isset($images) ? json_encode($images) : NULL,
-            'currency_code' => $data['currency_code'], 
+            'currency_code' => $data['currency_code'],
             'unit_code' => $data['unit_code'],
             'price' => $data['price'],
             'company_id' => $request->user()->company_id
         ]);
-        
+
         return back()->with([
             'success' => sprintf('El producto "%s" fue creado con éxito.', $product->code)
         ]);
     }
 
-    private function uploadImages(array $images, $upload_folder) 
+    private function uploadImages(array $images, $upload_folder)
     {
         $items = [];
-        for ($i=0; $i < count($images); $i++) { 
+        for ($i=0; $i < count($images); $i++) {
             $items[$i] = $images[$i]->store($upload_folder, 'public');
         }
 

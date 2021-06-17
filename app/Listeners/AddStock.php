@@ -17,7 +17,7 @@ class AddStock
      */
     public function handle(InvoiceItemCreated $event)
     {
-        var_dump($event->item);
+//        var_dump($event->item);
         $inventory = Inventory::firstOrCreate([
             'store_id' => Store::primary()->id,
             'product_id' => $event->item->product_id
