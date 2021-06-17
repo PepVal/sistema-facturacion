@@ -64,7 +64,7 @@ class ExampleTest extends TestCase
                 "created_at"=>"2021-06-15 19:40:31"
             ]
         ];
-        $response = InventoryMovement::descriptionFor('PURCHASE',$datos);
+        $response = InventoryMovement:: descriptionFor('PURCHASE',$datos);
 
         $expected = "NUEVA COMPRA DE 3 PRODUCTOS (Pañal) REGISTRADO EL 2021-06-15 19:40:31";
 
