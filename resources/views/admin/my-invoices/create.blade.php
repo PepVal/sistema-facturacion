@@ -14,11 +14,11 @@
                         <div class="row">
                             <div class="col form-group">
                                 <input type="text" class="form-control" name="serie" placeholder="F001"
-                                    />
+                                />
                             </div>
                             <div class="col form-group">
-                                <input type="number" class="form-control" name="correlative" placeholder="001" 
-                                    />
+                                <input type="number" class="form-control" name="correlative" placeholder="001"
+                                />
                             </div>
                         </div>
                     </div>
@@ -26,8 +26,8 @@
                         <div class="row">
                             <div class="col form-group">
                                 <label for="creation_date">Fecha de emisión</label>
-                                <input type="date" class="form-control" name="creation_date" id="creation_date" 
-                                    />
+                                <input type="date" class="form-control" name="creation_date" id="creation_date"
+                                />
                             </div>
                             <div class="col form-group">
                                 <label for="expiration_date">Fecha de vencimiento</label>
@@ -39,8 +39,8 @@
                             <div class="form-group">
                                 <div class="animated-radio-button">
                                     <label class="custom-control-inline">
-                                      <input type="radio" name="currency_code" value="PEN"/>
-                                      <span class="label-text">PEN</span>
+                                        <input type="radio" name="currency_code" value="PEN"/>
+                                        <span class="label-text">PEN</span>
                                     </label>
                                     <label class="custom-control-inline">
                                         <input type="radio" name="currency_code" value="USD"/>
@@ -53,8 +53,8 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="customer_id">Búsqueda por RUC o Razón Social</label>
-                            <select name="customer_id" id="customer_id" style="display:none;" 
-                                data-url="{{ route('admin.customers.data') }}">
+                            <select name="customer_id" id="customer_id" style="display:none;"
+                                    data-url="{{ route('admin.customers.data') }}">
                             </select>
                         </div>
                         <fieldset class="border p-2">
@@ -62,8 +62,8 @@
                             <div class="form-group">
                                 <div class="animated-radio-button">
                                     <label class="custom-control-inline">
-                                      <input type="radio" name="status" value="PENDIENTE"/>
-                                      <span class="label-text">PENDIENTE</span>
+                                        <input type="radio" name="status" value="PENDIENTE"/>
+                                        <span class="label-text">PENDIENTE</span>
                                     </label>
                                     <label class="custom-control-inline">
                                         <input type="radio" name="status" value="PAGADO"/>
@@ -88,7 +88,7 @@
     @endcomponent
 @endsection
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" 
-integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-<script src="{{ asset('js/pages/create-invoice.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+            integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/pages/create-invoice.js') }}"></script>
 @endpush

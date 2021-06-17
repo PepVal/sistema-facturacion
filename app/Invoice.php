@@ -63,7 +63,7 @@ class Invoice extends Model
 
     public function scopePurchases($query) {
         return $query->whereHas('customer', function($query) {
-            $query->where('type', Customer::SUPPLIER);
+            $query->where('type', Customer::CONSUMER);
         });
     }
 
