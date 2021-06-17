@@ -30,7 +30,7 @@ class UserController extends Controller
     public function create()
     {
         $company_id = auth()->user()->company_id;
-        
+
         return view('admin.users.create', [
             'stores' => Store::perCompany()->get(),
             'roles' => Role::where('company_id', $company_id)->get()
@@ -48,13 +48,14 @@ class UserController extends Controller
         $data = $request->validated();
 
         $user = User::create([
-            'first_name' => $data['first_name'], 
+            'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => isset($data['password']) ? bcrypt($data['password']): bcrypt( str_random(20) ),
-            'company_id' => $this->company_id
+            //'company_id' => $this->company_id
+            'company_id' => 1
         ]);
-        
+
         $user->stores()->attach($data['stores']);
         $user->assignRole($data['role_id']);
 
