@@ -32,7 +32,6 @@ class InvoiceTest extends TestCase
         ];
         // Act
         $response = Invoice::calculateSummary($data);
-
         // Assert
         $this->assertEquals($expect['igv_percent'], $response['igv_percent']);
         $this->assertEquals($expect['subtotal'], $response['subtotal']);
@@ -69,7 +68,6 @@ class InvoiceTest extends TestCase
         ];
         // Act
         $response = Invoice::calculateSummary($data);
-
         // Assert
         $this->assertEquals($expect['igv_percent'], $response['igv_percent']);
         $this->assertEquals($expect['subtotal'], $response['subtotal']);
@@ -89,10 +87,8 @@ class InvoiceTest extends TestCase
         $datos->created_at="2021-06-15 19:40:31";
 
         $expected = "NUEVA COMPRA DE 3 PRODUCTOS (Pañal) REGISTRADO EL 2021-06-15 19:40:31";
-
         // Act
         $response = InventoryMovement::descriptionFor('PURCHASE',$datos);
-
         // Assert
         $this->assertEquals($expected,$response);
     }
