@@ -9,9 +9,11 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class AdminDashboardTest extends TestCase
 {
 
+    
+
     /** @test */
 
-    function admins_can_visit_the_admin_dashboard() 
+    function admins_can_visit_the_admin_dashboard()
     {
         $this->markTestIncomplete();
     }
@@ -22,7 +24,7 @@ class AdminDashboardTest extends TestCase
     {
         $this->markTestIncomplete();
     }
-    
+
     /** @test */
 
     function guests_cannot_visit_the_admin_dashboard()

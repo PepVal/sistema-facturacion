@@ -20,7 +20,10 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
 
+<<<<<<< HEAD
     }
 
 
+=======
+>>>>>>> 32aed979fb5d2cf6bb3fbbfe77bcf477204106d2
 }
