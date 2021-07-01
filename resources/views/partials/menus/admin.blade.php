@@ -5,12 +5,12 @@
         <span class="app-menu__label">Escritorio</span>
       </a>
     </li>
-    <li>
+    <!--<li>
       <a class="app-menu__item {{ active('admin.stores.index') }}" href="{{ route('admin.stores.index') }}">
         <i class="app-menu__icon fa fa-building"></i>
         <span class="app-menu__label">Tiendas</span>
       </a>
-    </li>
+    </li>-->
     <li>
       <a class="app-menu__item {{ active('admin.products.index') }}" href="{{ route('admin.products.index') }}">
         <i class="app-menu__icon fa fa-cubes"></i>
