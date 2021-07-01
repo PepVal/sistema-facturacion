@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false, 'reset' => true, 'verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('admin/tiendas', 'AdminController@create');
+//Route::post('admin/tiendas', 'AdminController@store');
+Route::get('home', function() {
+    return view('home');
+});
 Route::get('/ruc/{ruc}', function($ruc) {
 
     $rucFinder = new Ruc(new ContextClient(), new RucParser(new HtmlParser()));

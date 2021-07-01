@@ -3,6 +3,7 @@
 
 use App\InventoryMovement;
 use App\Invoice;
+use App\InvoiceItem;
 use Illuminate\Database\Eloquent\Model;
 
 class InvoiceTest extends \Tests\TestCase
