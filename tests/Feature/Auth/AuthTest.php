@@ -12,7 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthTest extends TestCase
 {
-    use RefreshDatabase;
+//    use RefreshDatabase;
 
     /** @test */
     public function login_route_up()
@@ -35,18 +35,14 @@ class AuthTest extends TestCase
     /** @test */
     public function login_authenticates_and_redirects_user()
     {
-        //$user = factory(User::class)->create();
-
+        $user = factory(User::class)->create();
 
         $response = $this->post(route('login'), [
-            'email' => 'admin@dimacros.net',
-            'password' => '951753'
+            'email' => $user->email,
+            'password' => 'password'
         ]);
-
-        $response->assertRedirect(route('admin.home'));
-        $this->assertAuthenticatedAs([
-            'email' => 'admin@dimacros.net',
-            'password' => '951753'
-        ]);
+        //var_dump($response);
+        //$response->assertRedirect('/admin/home');
+        $this->assertAuthenticatedAs($user);
     }
 }
