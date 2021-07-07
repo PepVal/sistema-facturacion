@@ -5,7 +5,6 @@ use App\InventoryMovement;
 use App\Invoice;
 use App\InvoiceItem;
 use Illuminate\Database\Eloquent\Model;
-use App\InvoiceItem;
 use Tests\TestCase;
 
 
@@ -42,6 +41,8 @@ class InvoiceTest extends TestCase
 
     public function testCalculateSummaryList()
     {
+
+
         // Arrange
         $data = [
             [

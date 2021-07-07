@@ -29,19 +29,19 @@ class CreateInvoiceRequest extends FormRequest
         return [
             'serie' => [
                 'required',
-                'string', 
-                'alpha_num', 
-                'size:4'   
+                'string',
+                'alpha_num',
+                'size:4'
             ],
             'correlative' => [
-                'required', 
+                'required',
                 'numeric',
-                Rule::unique('invoices', 'correlative')->where('company_id',  $this->company_id())  
+                Rule::unique('invoices', 'correlative')->where('company_id',  $this->company_id())
             ],
             'currency_code' => [
-                'required', 
-                'string', 
-                'size:3', 
+                'required',
+                'string',
+                'size:3',
                 Rule::in(Currency::list())
             ],
             'creation_date' => ['required', 'date'],
@@ -51,7 +51,7 @@ class CreateInvoiceRequest extends FormRequest
                 Rule::exists('customers', 'id')->where('company_id', $this->company_id())
             ],
             'status' => [
-                'required', 
+                'required',
                 'string',
                 Rule::in(Invoice::listStates())
             ],
@@ -62,7 +62,7 @@ class CreateInvoiceRequest extends FormRequest
             ],
             'items.*.code' => ['required', 'size:4'],
             'items.*.description' => ['required', 'string', 'max:255'],
-            'items.*.quantity' => ['required', 'numeric'], 
+            'items.*.quantity' => ['required', 'numeric','min:1'],
             'items.*.price' => ['required', 'numeric', 'min:0']
         ];
     }
