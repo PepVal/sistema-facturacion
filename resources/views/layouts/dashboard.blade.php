@@ -21,8 +21,8 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user">
-        <img class="app-sidebar__user-avatar" 
-        src="https://images-na.ssl-images-amazon.com/images/I/61B9%2BVzouQL._AC_SY679_.jpg" width="20%" alt="User Image">
+        <img class="app-sidebar__user-avatar"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" width="20%" alt="User Image">
         <div>
           <p class="app-sidebar__user-name">{{ auth()->user()->first_name }}</p>
           <p class="app-sidebar__user-designation">{{ auth()->user()->roleName() }}</p>
@@ -55,7 +55,7 @@
       @yield('content')
     </main>
     <!-- Essential javascripts for application to work-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>

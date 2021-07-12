@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Auth;
-
 
 use Tests\TestCase;
 use App\User;
@@ -26,7 +24,10 @@ class AuthTest extends TestCase
     /** @test */
     public function login_displays_validation_errors()
     {
-        $response = $this->post(route('login'), []);
+        $response = $this->post(route('login'), [
+            'email' => 'adminnnn@dimacros.net',
+            'password' => '951753'
+        ]);
 
         $response->assertStatus(302);
         $response->assertSessionHasErrors('email');
@@ -41,8 +42,6 @@ class AuthTest extends TestCase
             'email' => $user->email,
             'password' => 'password'
         ]);
-        //var_dump($response);
-        //$response->assertRedirect('/admin/home');
         $this->assertAuthenticatedAs($user);
     }
 }
